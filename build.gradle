@@ -132,8 +132,24 @@ project(":doc:manual") {
         }
     }
 
+    tasks.register("copyJavaDoc") {
+        dependsOn publishedGroovyModules.collect { project(it) }*.javadoc
+        def javaApi = new File(output, "java-api")
+        if (!javaApi.exists()) {
+            assert javaApi.mkdirs()
+        }
+
+        publishedGroovyModules.collect { module ->
+            def baseName = module[module.lastIndexOf(":") + 1..module.size() - 1]
+            copy {
+                from project(module).javadoc.destinationDir
+                into new File(javaApi, baseName)
+            }
+        }
+    }
+
     tasks.register("assemble") {
-        dependsOn  tasks.compile, tasks.copyGroovyDoc
+        dependsOn  tasks.compile, tasks.copyGroovyDoc, tasks.copyJavaDoc
     }
 }
 
