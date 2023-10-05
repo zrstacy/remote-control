@@ -13,3 +13,6 @@ This project uses [Gradle](http://www.gradle.org/ "Home - Gradle") to build. You
 
     ./gradlew test
 
+For a complete build, test run and generation of the documentation:
+
+    ./gradlew clean build includeManual

@@ -34,7 +34,6 @@ publishing {
             pom {
                 name = project.name
                 description = project.description
-                url = "http://remotecontrol.io"
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
@@ -48,6 +47,10 @@ publishing {
                     developer {
                         id   = "ldaley"
                         name = "Luke Daley"
+                    }
+                    developer {
+                        id   = "zrstacy"
+                        name = "Rick Stacy"
                     }
                 }
             }
