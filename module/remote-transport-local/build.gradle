@@ -31,6 +31,16 @@ publishing {
             version    = project.version
             from components.java
 
+            // Forces Gradle to map declared versions to resolved versions in the POM
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+            }
+
             pom {
                 name = project.name
                 description = project.description
