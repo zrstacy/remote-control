@@ -7,7 +7,7 @@ sourceCompatibility = "${sourceCompatibilityVersion}"
 targetCompatibility = "${targetCompatibilityVersion}"
 
 dependencies {
-    implementation "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    implementation "org.apache.groovy:groovy-all:${groovyVersion}"
     implementation project(":module:remote-core")
 
     testImplementation "org.spockframework:spock-core:${spockVersion}"
@@ -30,6 +30,16 @@ publishing {
             artifactId = project.name
             version    = project.version
             from components.java
+
+            // Forces Gradle to map declared versions to resolved versions in the POM
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+            }
 
             pom {
                 name = project.name

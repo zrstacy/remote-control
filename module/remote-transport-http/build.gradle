@@ -7,14 +7,15 @@ sourceCompatibility = "${sourceCompatibilityVersion}"
 targetCompatibility = "${targetCompatibilityVersion}"
 
 dependencies {
-    implementation "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    implementation "org.apache.groovy:groovy-all:${groovyVersion}"
     implementation project(":module:remote-core")
     implementation "javax.servlet:servlet-api:2.4"
-    implementation "jakarta.servlet:jakarta.servlet-api:6.0.0"
+    implementation "jakarta.servlet:jakarta.servlet-api:6.1.0"
 
     testImplementation "org.mortbay.jetty:jetty:6.1.21"
-    testImplementation "org.eclipse.jetty:jetty-server:11.0.13"
-    testImplementation "org.eclipse.jetty:jetty-servlet:11.0.13"
+    testImplementation 'org.eclipse.jetty:jetty-server:11.0.26'
+    testImplementation 'org.eclipse.jetty:jetty-servlet:11.0.26'
+
     testImplementation "org.spockframework:spock-core:${spockVersion}"
 }
 

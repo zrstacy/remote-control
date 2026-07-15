@@ -266,7 +266,7 @@ class SmokeTests extends Specification {
 
     def "testPassingUsedClosuresThatAccessADelegate"() {
         expect:
-        def contextClosure = { size() }
+        def contextClosure = { ((String)getDelegate()).size() }
         assert remote.exec(usedClosures: [contextClosure]) {
             contextClosure.setProperty('delegate', 'some text')
             contextClosure()

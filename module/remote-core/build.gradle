@@ -7,7 +7,7 @@ sourceCompatibility = "${sourceCompatibilityVersion}"
 targetCompatibility = "${targetCompatibilityVersion}"
 
 dependencies {
-    implementation "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    implementation "org.apache.groovy:groovy-all:${groovyVersion}"
 
     testImplementation project(":module:remote-transport-local")
     testImplementation project(":module:remote-using-lib")
