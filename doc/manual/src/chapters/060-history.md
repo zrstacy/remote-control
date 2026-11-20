@@ -2,6 +2,12 @@
 
 This page lists the high level changes between versions of Groovy Remote Control.
 
+## 0.9.1
+
+### Breaking Changes
+
+* Removed all `javax.servlet` support. The `io.remotecontrol.transport.http.RemoteControlServlet` and `io.remotecontrol.transport.http.javax.RemoteControlServlet` classes have been removed; subclass `io.remotecontrol.transport.http.jakarta.RemoteControlServlet` instead.
+
 ## 0.8
 
 ### Breaking Changes

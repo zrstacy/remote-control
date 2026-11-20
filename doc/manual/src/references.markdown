@@ -9,4 +9,3 @@
 [handler]: java-api/remote-transport-http/io/remotecontrol/transport/http/RemoteControlHttpHandler.html
 [httptransport-api]: java-api/remote-transport-http/io/remotecontrol/transport/http/HttpTransport.html
 [jakarta-httpservlet-api]: java-api/remote-transport-http/io/remotecontrol/transport/http/jakarta/RemoteControlServlet.html
-[javax-httpservlet-api]: java-api/remote-transport-http/io/remotecontrol/transport/http/javax/RemoteControlServlet.html
